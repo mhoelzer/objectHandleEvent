@@ -31,8 +31,8 @@ function ClickToAdvance(frame_images, target_div, x, y) {
      // this.img.addEventListener("click", this);
 }
 
-for(var i = 0; i < 5; i++) {
-    var x = 150 * i;
-    var y = Math.floor(Math.random() * 500);
-    var flower = new ClickToAdvance(flower_images, container_div, x, y);
+for(let i = 0; i < 5; i++) {
+    const x = 150 * i;
+    const y = Math.floor(Math.random() * 500);
+    const flower = new ClickToAdvance(flower_images, container_div, x, y);
 }
