@@ -39,8 +39,9 @@ function ClickToAdvance(frame_images, target_div, x, y) {
     this.img.addEventListener("click", this);
 }
 
+// this controls where the images end up on the page; it's a random location for both, but the x makes it stay in order
 for(let i = 1; i <= 5; i++) {
     const x = 150 * i;
-    const y = Math.floor(Math.random() * 500); // the 500 gets a whole number, and use the 5 because of i
+    const y = Math.floor(Math.random() * 500);
     const flower = new ClickToAdvance(flower_images, container_div, x, y);
 }

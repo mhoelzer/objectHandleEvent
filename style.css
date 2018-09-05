@@ -1,0 +1,25 @@
+.cloud-scroll {
+    width: 100%;
+    height: auto;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/clouds-full.png);
+    -webkit-animation: backgroundScroll 22s linear infinite;
+    animation: backgroundScroll 22s linear infinite;
+    z-index: -1;
+}
+    
+@-webkit-keyframes backgroundScroll {
+    from {background-position: 0 0;}
+    to {background-position: -400px 0;}
+}
+            
+@keyframes backgroundScroll {
+    from {background-position: 0 0;}
+    to {background-position: -400px 0;}
+}
+
+h1 {
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 60px;
+    text-align: center;
+}
