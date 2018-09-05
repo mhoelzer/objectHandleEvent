@@ -9,30 +9,38 @@ function ClickToAdvance(frame_images, target_div, x, y) {
     this.images = frame_images; // An array of image urls
     this.frame = 0;             // Index of the frame to show
     this.img = document.createElement("img");
-    this.img.src = this.images[0];
+    this.img.src = this.images[0]; // starts at the first index
     this.img.style.position = "absolute";
     this.img.style.left = x + "px";
     this.img.style.top = y + "px";
     target_div.appendChild(this.img);
 
     /* TODO: implement a method named handleEvent
-     * handleEvent should advance to the next frame in the sequence.
-     * 
-     * In other words, add one to this.frame, and set
-     * this.img.src = this.images[this.frame]
-     * 
-     * Dont increase this.frame beyond the number of frame_images available.
-     * 
-     * Once you have implemented the handleEvent method,
-     * you can uncomment the line below to add this object as the event listener
-     * for clicks on the image.
-     */
-     
-     // this.img.addEventListener("click", this);
+    * handleEvent should advance to the next frame in the sequence.
+    * 
+    * In other words, add one to this.frame, and set
+    * this.img.src = this.images[this.frame]
+    * 
+    * Dont increase this.frame beyond the number of frame_images available.
+    * 
+    * Once you have implemented the handleEvent method,
+    * you can uncomment the line below to add this object as the event listener
+    * for clicks on the image.
+    */
+    // method that advances
+    this.handleEvent = function() {
+        // this.frame doesnt go above the number of images, which is an index, so starts at 0
+        if(this.frame < this.images.length - 1) {
+            // add one to this.frame
+            this.frame++;
+            this.img.src = this.images[this.frame];
+        }
+    }
+    this.img.addEventListener("click", this);
 }
 
-for(let i = 0; i < 5; i++) {
+for(let i = 1; i <= 5; i++) {
     const x = 150 * i;
-    const y = Math.floor(Math.random() * 500);
+    const y = Math.floor(Math.random() * 500); // the 500 gets a whole number, and use the 5 because of i
     const flower = new ClickToAdvance(flower_images, container_div, x, y);
 }
