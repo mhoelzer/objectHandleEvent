@@ -13,7 +13,7 @@ function ClickToAdvance(frame_images, target_div, x, y) {
     this.img.style.position = "absolute";
     this.img.style.left = x + "px";
     this.img.style.top = y + "px";
-    target_div.appendChild(this.img);
+    target_div.appendChild(this.img); 
 
     /* TODO: implement a method named handleEvent
     * handleEvent should advance to the next frame in the sequence.
